@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/palakagarwal081/WebApiJenkins.git', branch: 'master'
+                git url: 'https://github.com/Deepankyadav1/WebApiJenkins.git', branch: 'master'
             }
         }
 
@@ -57,7 +57,7 @@ pipeline {
             steps {
                 bat '''
                 powershell Compress-Archive -Path WebApiJenkins\\publish\\* -DestinationPath publish.zip -Force
-                az webapp deployment source config-zip --resource-group jenkins-palak-rg --name jenkins-palak-app123 --src publish.zip
+                az webapp deployment source config-zip --resource-group jenkins-deepank-rg --name jenkins-deepank-app123 --src publish.zip
                 '''
             }
         }   
